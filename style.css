@@ -5,6 +5,42 @@
     --color-ocean: oklch(0.7 0.25 151.84);
 }
 
+@keyframes fade-in{
+    from{
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out{
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes slide-from-bottom{
+    from{
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes slide-to-bottom{
+    to{
+        transform: translateY(100vh);
+    }
+}
+
+/* ::view-transition-old(root){
+    animation: 
+    90ms ease-in both fade-out, 
+    300ms ease both slide-to-bottom;
+}
+
+::view-transition-new(root){
+    animation: 
+    210ms ease-out 90ms both fade-in,
+    300ms ease both slide-from-bottom;
+} */
+
 /* reset */
 
 * {
@@ -23,6 +59,9 @@ html {
 
 body {
     margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
 }
 
 svg,
@@ -42,31 +81,101 @@ h1 {
 .list-reset {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 /* components */
 
-.nav__list {}
+.nav__list {
+    --gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 29vw);
+    grid-template-rows: repeat(2, 29vh);
+    gap: var(--gap);
+}
 
-.nav__item {}
+.nav__item {
+    display: grid;
 
-.nav__link {}
+}
+
+.nav__link {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    border-radius: .25rem;
+    display: grid;
+    place-items: center;
+}
 
 /* give the links a different background color */
 
-.page {}
+.nav__link--one {
+    background-color: var(--color-yellow);
+}
+
+.nav__link--two {
+    background-color: var(--color-pink);
+}
+
+.nav__link--three {
+    background-color: var(--color-purple);
+}
+
+.nav__link--four {
+    background-color: var(--color-ocean);
+}
+
+.page {
+    width: calc(100vw - 10vw);
+    height: calc(100vh - 10vw);
+    color: white;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    border-radius: 1vh;
+}
 
 /* give the pages a different background color */
 
-.page--one {}
+.page--one {
+    background-color: var(--color-yellow);
+}
 
-.page--two {}
+.page--two {
+    background-color: var(--color-pink);
+}
 
-.page--three {}
+.page--three {
+    background-color: var(--color-purple);
+}
 
-.page--four {}
+.page--four {
+    background-color: var(--color-ocean);
+}
 
-.page__back {}
+.page__back {
+    align-self: start;
+    justify-self: end;
+    color: inherit;
+}
+
+.page__body{
+    text-align: center;
+}
 
 .page__body,
-.page__back {}
+.page__back {
+    grid-area: 1 / 1 / auto / auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
