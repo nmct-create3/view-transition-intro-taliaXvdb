@@ -1,0 +1,72 @@
+:root {
+    --color-purple: oklch(0.44 0.23 311.11);
+    --color-pink: oklch(0.66 0.26 16.42);
+    --color-yellow: oklch(0.84 0.2 86.18);
+    --color-ocean: oklch(0.7 0.25 151.84);
+}
+
+/* reset */
+
+* {
+    box-sizing: border-box;
+}
+
+/* global page styles */
+
+html {
+    font-size: 125%;
+    font-family: "Nunito", sans-serif;
+    /* smooth font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+}
+
+svg,
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 6rem;
+    margin: 0;
+}
+
+/* objects */
+
+.list-reset {
+    list-style: none;
+    padding: 0;
+}
+
+/* components */
+
+.nav__list {}
+
+.nav__item {}
+
+.nav__link {}
+
+/* give the links a different background color */
+
+.page {}
+
+/* give the pages a different background color */
+
+.page--one {}
+
+.page--two {}
+
+.page--three {}
+
+.page--four {}
+
+.page__back {}
+
+.page__body,
+.page__back {}
